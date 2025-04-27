@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yellow</title>
+    <style>
+
+        @font-face {
+            font-family: 'determined';
+            src: url('./font.ttf') format('truetype');
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: 'determined', sans-serif;
+            color: white;
+            margin: 0;
+            background-color: #000000;
+        }
+        .img {
+            height: 45vh;
+        }
+        /* make text over the image */
+        text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 2em;
+            text-align: center;
+            color: white;
+        }
+        text * {
+          filter: drop-shadow(0 0 5px black);
+        }
+    </style>
+</head>
+<body>
+    <!-- load image ./yo.png -->
+    <img src="./yo.png" alt="salchicha" class="img" style="image-rendering: pixelated; image-rendering: crisp-edges;">
+
+    <!-- make event, on click, load menu_wild_east.ogg  or something to justify sound play -->
+    <script>
+        var played = false;
+        document.addEventListener('click', function() {
+            if (played) return;
+            played = true;
+            var audio = new Audio('./menu_wild_east.ogg');
+            audio.loop =true;
+            audio.play();
+        });
+    </script>
+    
+</body>
+</html>
